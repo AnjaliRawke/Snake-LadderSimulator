@@ -33,6 +33,9 @@ public class SnakeAndLadder {
 		        if(positionFirstPlayer < 0){
 		        	positionFirstPlayer = 0;
         		}
+		         if(positionFirstPlayer > 100){
+        		    positionFirstPlayer -= RollDice;
+        		}
 		        System.out.println();
         		}
 		    }
