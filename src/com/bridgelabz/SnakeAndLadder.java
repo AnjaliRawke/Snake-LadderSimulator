@@ -75,11 +75,11 @@ public class SnakeAndLadder {
 		
 		if(positionFirstPlayer == 100){
 			System.out.println("First Player Rolled Dice "+count1+" times");
-		    System.out.println("First won");
+		    System.out.println("First Player won");
 		}
 		else {
 			System.out.println("Second Player Rolled Dice "+count2+" times");
-		    System.out.println("second won");
+		    System.out.println("second Player won");
 		}
 		
 	}
