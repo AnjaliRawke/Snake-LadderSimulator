@@ -4,6 +4,8 @@ public class SnakeAndLadder {
 	public static void main(String[] args) {
 		System.out.println("Start the Snake and Ladder Game");
 		int positionFirstPlayer = 0, positionSecondPlayer = 0,count1=0,count2=0;
+		int  NPCount1 = 0,LadderCount1=0,SnakeCount1=0;
+		int  NPCount2 = 0,LadderCount2=0,SnakeCount2=0;
 		boolean currentTurn = true;
 		while(positionFirstPlayer != 100 && positionSecondPlayer != 100){
 			 if(currentTurn == true){
@@ -16,17 +18,20 @@ public class SnakeAndLadder {
         		case 1:
         		System.out.println("NO PLAY: "+positionFirstPlayer);
         		System.out.println("Player stays in the same position");
+			    NPCount1++;
         		currentTurn = false;
         	 	break;
         		case 2:
         		System.out.println("LADDER: "+(RollDice+positionFirstPlayer));
         		System.out.println("Player moves ahead by: "+RollDice);
         		positionFirstPlayer = positionFirstPlayer + RollDice;
+        		LadderCount1++;
         		break;
         		case 3:
         		System.out.println("SNAKE: "+(-RollDice+positionFirstPlayer));
         		System.out.println("Player moves behind by: "+RollDice);
         		positionFirstPlayer = positionFirstPlayer - RollDice;
+        		SnakeCount1++;
         		currentTurn = false;
         		}
 		       count1++;
@@ -48,17 +53,20 @@ public class SnakeAndLadder {
         		case 1:
         		System.out.println("NO PLAY: "+positionSecondPlayer);
         		System.out.println("Player stays in the same position");
+        		NPCount2++;
         		currentTurn = true;
         	 	break;
         		case 2:
         		System.out.println("LADDER: "+(RollDice+positionSecondPlayer));
         		System.out.println("Player moves ahead by: "+RollDice);
         		positionSecondPlayer = positionSecondPlayer + RollDice;
+        		LadderCount2++;
         		break;
         		case 3:
         		System.out.println("SNAKE: "+(-RollDice+positionSecondPlayer));
         		System.out.println("Player moves behind by: "+RollDice);
         		positionSecondPlayer = positionSecondPlayer - RollDice;
+        		SnakeCount2++;
         		currentTurn = true;
         		}
 		       count2++;
@@ -74,11 +82,11 @@ public class SnakeAndLadder {
 			}
 		
 		if(positionFirstPlayer == 100){
-			System.out.println("First Player Rolled Dice "+count1+" times");
+			System.out.println("First Player Rolled Dice "+count1+" times:"+" NO PLAY Came "+NPCount1+" times:"+" Ladder Came "+LadderCount1+" times:"+" Snake came "+SnakeCount1+" times" );
 		    System.out.println("First Player won");
 		}
 		else {
-			System.out.println("Second Player Rolled Dice "+count2+" times");
+			System.out.println("Second Player Rolled Dice "+count2+" times:"+" NO PLAY Came "+NPCount2+" times:"+" Ladder Came "+LadderCount2+" times:"+" Snake came "+SnakeCount2+" times" );
 		    System.out.println("second Player won");
 		}
 		
